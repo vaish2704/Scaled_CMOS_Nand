@@ -15,8 +15,8 @@ Nowadays, we observe that a complementary-metaloxide-semiconductor (CMOS) is wid
 * [Tools Used](#Tools-Used)
 * [Circuit Design](#Circuit-Design)
 * [Simulation](#Simulation)
+* [SPICE Netlist](#SPICE-Netlist)
 * [Delay Comparison](#Delay-Comparison)
-* [Observation](#Observation)
 * [Conclusion](#Conclusion)
 * [Author](#Author)
 * [Acknowledgements](#Acknowledgements)
@@ -158,15 +158,24 @@ The Simulation for the above circuits has been performed using the .trans analys
 
 # SPICE Netlist
 ## Conventional NAND Gate
-To view the SPICE Netlist, kindly refer to:
+To view the SPICE Netlist, kindly refer to: <a href='https://github.com/vaish2704/Scaled_CMOS_Nand/blob/main/Netlists/Conv_Nand.net'>Conv_Netlist</a></br>
 
 ## Scaled NAND Gate
-To view the SPICE Netlist, kindly refer to: 
-# Delay Comparison
+To view the SPICE Netlist, kindly refer to: <a href='https://github.com/vaish2704/Scaled_CMOS_Nand/blob/main/Netlists/Scaled_nand.net'>Scaled_Netlist</a></br>
 
-# Observation
+# Delay Comparison
+<p align="center">
+<img src="Simulation Outputs/Delay_Comp.jpg"></br>
+Delay Table of NAND Gate
+</p>
+
+<p align="center">
+<img src="Simulation Outputs/Delay_Comp.jpg"></br>
+Delay Comparison Result of NAND Gate on 28nm CMOS Technology
+</p>
 
 # Conclusion
+The design and analysis of the 2-Input Scaled CMOS NAND Gate has been carried out successfully using the Synopsys tools and the delay comparison with a Conventional 2-Input CMOS NAND Gate has been seen wherein we noticed that the delay in the Conventional NAND Gate is approximately 7 times than that of the Scaled NAND Gate at the same CMOS scale of 28 nanometers.
 
 # Author
 • Vaishnavi Jha, B.Tech(ECE), SRM Institute of Science and Technology, Kattankulattur, Chennai-603203.
@@ -177,6 +186,7 @@ To view the SPICE Netlist, kindly refer to:
 • <a href='https://www.synopsys.com/'>Synopsys India</a></br>
 
 # References
-
+[1] Mukesh Kumar, Dept. of ECE, SLIET, Longowal, “Analysis of CMOS Based NAND and NOR gates at 45 nm Technology”, International Journal of Electronics, Electrical and Computational System, ISSN 2348-117X Volume 6, Issue 4 April 2017</br>
+[2] Poonam S. Wankhede, Asst Prof Mrs. Usha Jadhav, “Design and Analysis of NAND Gate Using 180nm and 90nm CMOS Technology”, IJSART - Volume 3 Issue 5 – MAY 2017
 
 
