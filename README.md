@@ -178,7 +178,7 @@ Delay Comparison Result of NAND Gate on 28nm CMOS Technology
 </p>
 
 # Conclusion
-The design and analysis of the 2-Input Scaled CMOS NAND Gate has been carried out successfully using the Synopsys tools and the delay comparison with a Conventional 2-Input CMOS NAND Gate has been carried out wherein we noticed that the delay in the Conventional NAND Gate is approximately 7 times than that of the Scaled NAND Gate at the same CMOS scale of 28 nanometers.
+The design and analysis of the 2-Input Scaled CMOS NAND Gate was done successfully using the Synopsys tools and the delay comparison with a Conventional 2-Input CMOS NAND Gate has been carried out wherein it was noticed that the delay in the Conventional NAND Gate is approximately 7 times than that of the Scaled NAND Gate at the same CMOS scale of 28 nanometers.
 
 # Author
 • Vaishnavi Jha, B.Tech(ECE), SRM Institute of Science and Technology, Kattankulattur, Chennai-603203.
