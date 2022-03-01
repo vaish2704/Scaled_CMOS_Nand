@@ -1,0 +1,65 @@
+*  Generated for: PrimeSim
+*  Design library name: cp_lib1
+*  Design cell name: scaled_nand_tb
+*  Design view name: schematic
+.lib 'saed32nm.lib' TT
+
+*Custom Compiler Version S-2021.09
+*Tue Mar  1 09:18:10 2022
+
+.global gnd!
+********************************************************************************
+* Library          : cp_lib1
+* Cell             : scaled_nand
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+.subckt scaled_nand a b op
+xm8 op a net9 net9 p105 w=0.1u l=0.03u nf=1 m=1
+xm1 op a net9 net9 p105 w=0.1u l=0.03u nf=1 m=1
+xm0 op b net9 net9 p105 w=0.1u l=0.03u nf=1 m=1
+xm4 net17 b gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
+xm3 op a net17 net17 n105 w=0.1u l=0.03u nf=1 m=1
+v6 net9 gnd! dc=1.2
+.ends scaled_nand
+
+********************************************************************************
+* Library          : cp_lib1
+* Cell             : scaled_nand_tb
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+xi0 a b op scaled_nand
+v2 b gnd! dc=0 pulse ( 0 1.2 0 100p 100p 2n 10n )
+v1 a gnd! dc=0 pulse ( 0 1.2 0 100p 100p 2n 10n )
+
+
+
+
+
+
+
+
+.tran '0.1n' '60n' name=tran
+
+.option primesim_remove_probe_prefix = 0
+.probe v(*) i(*) level=1
+.probe tran v(a) v(b) v(op)
+
+.temp 25
+
+
+
+.option primesim_output=wdf
+
+
+.option parhier = LOCAL
+
+
+
+
+
+
+.end
