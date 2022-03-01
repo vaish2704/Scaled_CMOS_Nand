@@ -23,6 +23,7 @@ The work that was done using the 28nm Library file in this design is divided int
 <p align="center">
 <img src="Reference_Ckts_Waveform/Ref_Ckt_Conv.jpg"></br>
 Fig: Reference Circuit of Conventional NAND Gate 
+</p>
 
 ## Circuit Working Principle
 
