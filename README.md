@@ -171,6 +171,7 @@ Delay Table of NAND Gate
 
 <p align="center">
 <img src="Simulation Outputs/BarGraph_Comp.jpg"></br>
+
 Delay Comparison Result of NAND Gate on 28nm CMOS Technology
 </p>
 
