@@ -181,7 +181,7 @@ To view the SPICE Netlist, kindly refer to: <a href='https://github.com/vaish270
 
 # Delay Comparison
 <p align="center">
-<img src="Simulation Outputs/Delay_Comp.jpg"></br>
+<img src="Simulation Outputs/Delay_Compare.jpg"></br>
 Delay Table of NAND Gate
 </p>
 
