@@ -9,6 +9,19 @@ Nowadays, we observe that a complementary-metaloxide-semiconductor (CMOS) is wid
 
 # Contents
 
+* [Introduction](#Introduction)
+* [Conventional NAND Gate](#Conventional-NAND-Gate)
+* [Scaled NAND Gate](#Scaled-Nand-Gate)
+* [Tools Used](#Tools-Used)
+* [Circuit Design](#Circuit-Design)
+* [Simulation](#Simulation)
+* [Delay Comparison](#Delay-Comparison)
+* [Observation](#Observation)
+* [Conclusion](#Conclusion)
+* [Author](#Author)
+* [Acknowledgements](#Acknowledgements)
+* [References](#References)
+
 # Introduction
 
 In the world of Digital Circuits, NAND gates are one of the most prominent logic gates which produce a low output only when all of the inputs are high(i.e. logic 1).The output of these gates is simply the invert/complement of an AND gate.They are one of the two Universal gates(the other being NOR gates) but are more common in the industry than the latter, the reason for this being the Design Implementation easeness and the less complex approach of minterms involved in NAND Gate logic. The recent changes in the VLSI Industry in view of the shrinking size of transistors has changed the way these devices impact the world. The CMOS NAND Gates are widely used in a lot of digital, analog and mixed signal circuits.
@@ -32,17 +45,16 @@ Fig: Reference Circuit of Conventional NAND Gate
 Fig: Truth Table of NAND Gate 
 </p>
 
-Case 1: When A=0, B=0
-As VA and VB both are low, both the pMOS will be ON and both the nMOS will be OFF. So the output Vout will get two paths through two ON pMOS to get connected with Vdd. The output will be charged to the Vdd level. The output line will not get any path to the GND as both the nMOS are off. So, there is no path through which the output line can discharge. The output line will maintain the voltage level at Vdd, hence Vout will be high. 
+As it is visible in the reference circuit above, the 2-input CMOS NAND Gate is made by connecting two PMOS transistors in parallel which in turn are connected in series with the two NMOS transistors which again are in series connection with each other. The two inputs Va and Vb are given in such a way that the Va input line is given simultaneously to the gate of left PMOS and upper NMOS whereas the input line Vb is given simultaneously to the gate of right PMOS and lower NMOS. The source of the PMOS transistors are given directly to the Vdd and the Vout terminal is observed to get our desired output.
 
-Case 2: When A=0, B=1
-pMOS1 and pMOS2 are in parallel. Though pMOS2 is OFF, still the output line will get a path through pMOS1 to get connected with Vdd. nMOS1 and nMOS2 are in series. As nMOS1 is OFF, so Vout will not be able to find a path to GND to get discharged. This in turn results the Vout to be maintained at the level of Vdd, hence Vout will be high.
+So now considering the truth table above; 
+Case 1: When A=B=0,both the NMOS are in OFF condition and PMOS are in ON condition. Therefore the output is connected to VDD and HIGH logic is present at the output terminal. 
 
-Case 3: When A=1, B=0
-Works in a similar fashion as in case 2, hence Vout will be high.
+Case 2: When A=0 and B=1, the upper NMOS are in OFF and lower NMOS in ON condition. Left PMOS are in ON and right PMOS in OFF condition. Therefore the output is connected to VDD and HIGH logic is present at the output terminal.
 
-Case 4: When A=1, B=1
-In this case, both the pMOS are OFF. So, Vout will not find any path to get connected with Vdd. As both the nMOS are ON, the series connected nMOS will create a path from Vout to GND. Since, the path to ground is established, Vout will be discharged, hence low.
+Case 3: When A=1 and B=0, upper NMOS are in ON and lower NMOS in OFF condition. Left PMOS are in OFF and right PMOS in ON condition. Therefore the output is connected to VDD and HIGH logic is present at the output terminal.
+
+Case 4: When A=B=1,both the NMOS are in ON condition and PMOS are in OFF condition. Therefore the output is connected to VDD and LOW logic is present at the output terminal.
 
 ## Reference Waveform
 <p align="center">
@@ -50,11 +62,121 @@ In this case, both the pMOS are OFF. So, Vout will not find any path to get conn
 Fig: Reference Waveform of Conventional NAND Gate 
 </p>
 
-
-
-# Conventional NAND Gate
-## Reference Circuit
-
-## Circuit Working Principle
+# Scaled Nand Gate
 
 ## Reference Circuit
+<p align="center">
+<img src="Reference_Ckts_Waveform/Ref_ckt_scaled.jpg"></br>
+Fig: Reference Circuit of Scaled NAND Gate 
+</p>
+
+## Design Explanation
+
+In contrast to the Conventional NAND Gate Design, we can see in the reference circuit above, the 2-input Scaled CMOS NAND Gate is made by connecting three PMOS transistors in parallel which in turn are connected in series with the two NMOS transistors below, which again are in series connection with each other.The two input lines p1 and p2 are given in such a way that the p1.1 input line is given simultaneously to the gate of PMOS_1 and NMOS_1 transistors whereas the input line p2 is given simultaneously to the gate of PMOS_3 and NMOS_2 transistors. Also, p1.2 input line goes directly to the gate of pmos_2 transistor. The source of the PMOS transistors are given directly to the Vdd and the Vout terminal is observed to get our desired output.
+
+Considering the truth table of NAND Gate shown above; 
+Case 1: When p1.1=p1.2=p2=0,both the NMOS are in OFF condition and PMOS are in ON condition. Therefore the output is connected to VDD and HIGH logic is present at the output terminal. 
+
+Case 2: When p1.1=p1.2=0 and p2=1, the upper NMOS are in OFF and lower NMOS in ON condition. Left PMOS are in ON and right PMOS in OFF condition. Therefore the output is connected to VDD and HIGH logic is present at the output terminal. 
+
+Case 3: When p1.1=p1.2=1 and p2=0, upper NMOS are in ON and lower NMOS in OFF condition. Left PMOS are in OFF and right PMOS in ON condition. Therefore the output is connected to VDD and HIGH logic is present at the output terminal. 
+
+Case 4: When p1.1=p1.2=p2=1,both the NMOS are in ON condition and PMOS are in OFF condition. Therefore the output is connected to VDD and LOW logic is present at the output
+terminal.
+
+## Reference Waveform
+<p align="center">
+<img src="Reference_Ckts_Waveform/Ref_op_Scaled.jpg"></br>
+Fig: Reference Waveform of Scaled NAND Gate 
+</p>
+
+# Tools Used
+<b>• Synopsys Custom Compiler:</b></br>
+The Synopsys Custom Compiler™ design environment is a modern solution for full-custom analog, custom digital, and mixed-signal IC design. As the heart of the Synopsys Custom Design Platform, Custom Compiler provides design entry, simulation management and analysis, and custom layout editing features.
+More information can be found here: <a href='https://www.synopsys.com/implementation-and-signoff/custom-design-platform/custom-compiler.html'>Synopsys Custom Compiler</a></br>
+
+<b>• Synopsys Primewave:</b></br>
+PrimeWave™ Design Environment is a comprehensive and flexible environment for simulation setup and analysis of analog, RF, mixed-signal design, custom-digital and memory designs within the Synopsys Custom Design Platform. The transient analysis of the above schematic was made possible because of this very tool. 
+More information can be found here: <a href='https://www.synopsys.com/implementation-and-signoff/ams-simulation/primewave.html'>Synopsys PrimeWave Design Environment</a></br>
+
+<b>• Synopsys 28nm PDK:</b></br>
+The 28 nanometer Process design kit by Synopsys was the focal point behind the Design and Analysis of this project.
+
+# Circuit Design
+
+## Conventional NAND Gate
+### Schematic
+<p align="center">
+<img src="Circuits/Conv_Schematic.jpg"></br>
+Fig: Schematic 
+</p>
+
+### Symbol
+<p align="center">
+<img src="Symbols/Conv_Symbol.jpg"></br>
+Fig: Symbol
+</p>
+
+### Testbench
+<p align="center">
+<img src="Testbenches/Conv_Schematic._TBjpg.jpg"></br>
+Fig: Testbench 
+</p>
+
+## Scaled NAND Gate
+### Schematic
+<p align="center">
+<img src="Circuits/Scaled_Schematic.jpg"></br>
+Fig: Schematic
+</p>
+
+### Symbol
+<p align="center">
+<img src="Symbols/Scaled_Symbol.jpg"></br>
+Fig: Symbol
+</p>
+
+### Testbench
+<p align="center">
+<img src="Testbenches/Scaled_Schematic_TB.jpg"></br>
+Fig: Testbench 
+</p>
+
+# Simulation
+
+The Simulation for the above circuits has been performed using the .trans analysis by importing the 28nm .lib file from the HSPICE directory in the PrimeWave Design Environment.
+
+## Transient Analysis of Conventional NAND Gate
+<p align="center">
+<img src="Simulation Outputs/Conv_TB_op.jpg"></br>
+</p>
+
+## Transient Analysis of Scaled NAND Gate
+<p align="center">
+<img src="Simulation Outputs/Scaled_TB_op.jpg"></br>
+</p>
+
+# SPICE Netlist
+## Conventional NAND Gate
+To view the SPICE Netlist, kindly refer to:
+
+## Scaled NAND Gate
+To view the SPICE Netlist, kindly refer to: 
+# Delay Comparison
+
+# Observation
+
+# Conclusion
+
+# Author
+• Vaishnavi Jha, B.Tech(ECE), SRM Institute of Science and Technology, Kattankulattur, Chennai-603203.
+
+# Acknowledgements
+• <a href='https://www.vlsisystemdesign.com/about-me/'>Kunal Ghosh</a>, Founder, VSD Corp. Pvt. Ltd.</br>
+• <a href='https://iith.ac.in/'>IIT Hyderabad</a></br>
+• <a href='https://www.synopsys.com/'>Synopsys India</a></br>
+
+# References
+
+
+
