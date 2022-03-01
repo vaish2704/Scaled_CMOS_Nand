@@ -148,14 +148,28 @@ Fig: Testbench
 
 The Simulation for the above circuits has been performed using the .trans analysis by importing the 28nm .lib file from the HSPICE directory in the PrimeWave Design Environment.
 
-## Transient Analysis of Conventional NAND Gate
+## Transient Analysis as per Reference Waveform
+
+### Conventional NAND Gate
 <p align="center">
 <img src="Simulation Outputs/Conv_TB_op.jpg"></br>
 </p>
 
-## Transient Analysis of Scaled NAND Gate
+### Scaled NAND Gate
 <p align="center">
 <img src="Simulation Outputs/Scaled_TB_op.jpg"></br>
+</p>
+
+## Transient Analysis as per Truth Table of NAND Gate
+
+### Conventional NAND Gate
+<p align="center">
+<img src="Simulation Outputs/Conv_TB_op_TT.jpg"></br>
+</p>
+
+### Scaled NAND Gate
+<p align="center">
+<img src="Simulation Outputs/Scaled_TB_op_TT.jpg"></br>
 </p>
 
 # SPICE Netlist
