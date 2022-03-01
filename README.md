@@ -25,6 +25,36 @@ The work that was done using the 28nm Library file in this design is divided int
 Fig: Reference Circuit of Conventional NAND Gate 
 </p>
 
-## Circuit Working Principle
+## Design Explanation
+### Truth Table
+<p align="center">
+<img src="Reference_Ckts_Waveform/NAND-TT.png"></br>
+Fig: Truth Table of NAND Gate 
+</p>
+
+Case 1: When A=0, B=0
+As VA and VB both are low, both the pMOS will be ON and both the nMOS will be OFF. So the output Vout will get two paths through two ON pMOS to get connected with Vdd. The output will be charged to the Vdd level. The output line will not get any path to the GND as both the nMOS are off. So, there is no path through which the output line can discharge. The output line will maintain the voltage level at Vdd, hence Vout will be high. 
+
+Case 2: When A=0, B=1
+pMOS1 and pMOS2 are in parallel. Though pMOS2 is OFF, still the output line will get a path through pMOS1 to get connected with Vdd. nMOS1 and nMOS2 are in series. As nMOS1 is OFF, so Vout will not be able to find a path to GND to get discharged. This in turn results the Vout to be maintained at the level of Vdd, hence Vout will be high.
+
+Case 3: When A=1, B=0
+Works in a similar fashion as in case 2, hence Vout will be high.
+
+Case 4: When A=1, B=1
+In this case, both the pMOS are OFF. So, Vout will not find any path to get connected with Vdd. As both the nMOS are ON, the series connected nMOS will create a path from Vout to GND. Since, the path to ground is established, Vout will be discharged, hence low.
 
 ## Reference Waveform
+<p align="center">
+<img src="Reference_Ckts_Waveform/Ref_Op_Conv.jpg"></br>
+Fig: Reference Waveform of Conventional NAND Gate 
+</p>
+
+
+
+# Conventional NAND Gate
+## Reference Circuit
+
+## Circuit Working Principle
+
+## Reference Circuit
