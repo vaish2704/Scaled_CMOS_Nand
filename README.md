@@ -24,7 +24,7 @@ Nowadays, we observe that a complementary-metaloxide-semiconductor (CMOS) is wid
 
 # Introduction
 
-In the world of Digital Circuits, NAND gates are one of the most prominent logic gates which produce a low output only when all of the inputs are high(i.e. logic 1).The output of these gates is simply the invert/complement of an AND gate.They are one of the two Universal gates(the other being NOR gates) but are more common in the industry than the latter, the reason for this being the Design Implementation easeness and the less complex approach of minterms involved in NAND Gate logic. The recent changes in the VLSI Industry in view of the shrinking size of transistors has changed the way these devices impact the world. The CMOS NAND Gates are widely used in a lot of digital, analog and mixed signal circuits.
+In the world of Digital Circuits, NAND gates are one of the most prominent logic gates which produce a low output only when all of the inputs are high(i.e. logic 1).The output of these gates is simply the invert/complement of an AND gate. They are one of the two Universal gates(the other being NOR gates) but are more common in the industry than the latter, the reason for this being the Design Implementation easeness and the less complex approach of minterms involved in NAND Gate logic. The recent changes in the VLSI Industry in view of the shrinking size of transistors has changed the way these devices impact the world. The CMOS NAND Gates are widely used in a lot of digital, analog and mixed signal circuits.
 In CMOS technology, both N-type and P-type transistors are used to design logic functions. The same signal which turns ON a transistor of one type is used to turn OFF a transistor of the other type. This characteristic is the root reason allowing us to design our Conventional and Scaled NAND logic.
 The work that was done using the 28nm Library file in this design is divided into three sections-
 1) Design of Conventional NAND gate
@@ -47,12 +47,13 @@ Fig: Truth Table of NAND Gate
 
 As it is visible in the reference circuit above, the 2-input CMOS NAND Gate is made by connecting two PMOS transistors in parallel which in turn are connected in series with the two NMOS transistors which again are in series connection with each other. The two inputs Va and Vb are given in such a way that the Va input line is given simultaneously to the gate of left PMOS and upper NMOS whereas the input line Vb is given simultaneously to the gate of right PMOS and lower NMOS. The source of the PMOS transistors are given directly to the Vdd and the Vout terminal is observed to get our desired output.
 
-So now considering the truth table above; 
-Case 1: When A=B=0,both the NMOS are in OFF condition and PMOS are in ON condition. Therefore the output is connected to VDD and HIGH logic is present at the output terminal. 
+So now considering the truth table above,
 
-Case 2: When A=0 and B=1, the upper NMOS are in OFF and lower NMOS in ON condition. Left PMOS are in ON and right PMOS in OFF condition. Therefore the output is connected to VDD and HIGH logic is present at the output terminal.
+Case 1: When A=B=0, both the NMOS are in OFF condition and PMOS are in ON condition. Therefore the output is connected to VDD and HIGH logic is present at the output terminal. 
 
-Case 3: When A=1 and B=0, upper NMOS are in ON and lower NMOS in OFF condition. Left PMOS are in OFF and right PMOS in ON condition. Therefore the output is connected to VDD and HIGH logic is present at the output terminal.
+Case 2: When A=0 and B=1, the upper NMOS are in OFF condition and lower NMOS in ON condition. Left PMOS are in ON and right PMOS in OFF condition. Therefore the output is connected to VDD and HIGH logic is present at the output terminal.
+
+Case 3: When A=1 and B=0, upper NMOS are in ON condition and lower NMOS in OFF condition. Left PMOS are in OFF and right PMOS in ON condition. Therefore the output is connected to VDD and HIGH logic is present at the output terminal.
 
 Case 4: When A=B=1,both the NMOS are in ON condition and PMOS are in OFF condition. Therefore the output is connected to VDD and LOW logic is present at the output terminal.
 
@@ -72,14 +73,15 @@ Fig: Reference Circuit of Scaled NAND Gate
 
 ## Design Explanation
 
-In contrast to the Conventional NAND Gate Design, we can see in the reference circuit above, the 2-input Scaled CMOS NAND Gate is made by connecting three PMOS transistors in parallel which in turn are connected in series with the two NMOS transistors below, which again are in series connection with each other.The two input lines p1 and p2 are given in such a way that the p1.1 input line is given simultaneously to the gate of PMOS_1 and NMOS_1 transistors whereas the input line p2 is given simultaneously to the gate of PMOS_3 and NMOS_2 transistors. Also, p1.2 input line goes directly to the gate of pmos_2 transistor. The source of the PMOS transistors are given directly to the Vdd and the Vout terminal is observed to get our desired output.
+In contrast to the Conventional NAND Gate Design, we can see in the reference circuit above, the 2-input Scaled CMOS NAND Gate is made by connecting three PMOS transistors in parallel which in turn are connected in series with the two NMOS transistors below, which again are in series connection with each other. The two input lines p1 and p2 are given in such a way that the p1.1 input line is given simultaneously to the gate of PMOS_1 and NMOS_1 transistors whereas the input line p2 is given simultaneously to the gate of PMOS_3 and NMOS_2 transistors. Also, p1.2 input line goes directly to the gate of pmos_2 transistor. The source of the PMOS transistors are given directly to the Vdd and the Vout terminal is observed to get our desired output.
 
-Considering the truth table of NAND Gate shown above; 
+Considering the truth table of NAND Gate shown above,
+
 Case 1: When p1.1=p1.2=p2=0,both the NMOS are in OFF condition and PMOS are in ON condition. Therefore the output is connected to VDD and HIGH logic is present at the output terminal. 
 
-Case 2: When p1.1=p1.2=0 and p2=1, the upper NMOS are in OFF and lower NMOS in ON condition. Left PMOS are in ON and right PMOS in OFF condition. Therefore the output is connected to VDD and HIGH logic is present at the output terminal. 
+Case 2: When p1.1=p1.2=0 and p2=1, the upper NMOS are in OFF condition and lower NMOS in ON condition. Left PMOS are in ON and right PMOS in OFF condition. Therefore the output is connected to VDD and HIGH logic is present at the output terminal. 
 
-Case 3: When p1.1=p1.2=1 and p2=0, upper NMOS are in ON and lower NMOS in OFF condition. Left PMOS are in OFF and right PMOS in ON condition. Therefore the output is connected to VDD and HIGH logic is present at the output terminal. 
+Case 3: When p1.1=p1.2=1 and p2=0, upper NMOS are in ON condition and lower NMOS in OFF condition. Left PMOS are in OFF and right PMOS in ON condition. Therefore the output is connected to VDD and HIGH logic is present at the output terminal. 
 
 Case 4: When p1.1=p1.2=p2=1,both the NMOS are in ON condition and PMOS are in OFF condition. Therefore the output is connected to VDD and LOW logic is present at the output
 terminal.
@@ -100,7 +102,7 @@ PrimeWave™ Design Environment is a comprehensive and flexible environment for 
 More information can be found here: <a href='https://www.synopsys.com/implementation-and-signoff/ams-simulation/primewave.html'>Synopsys PrimeWave Design Environment</a></br>
 
 <b>• Synopsys 28nm PDK:</b></br>
-The 28 nanometer Process design kit by Synopsys was the focal point behind the Design and Analysis of this project.
+The Schematic design and output analysis of the project was done entirely using the 28nm Process Design Kit by Synopsys.
 
 # Circuit Design
 
