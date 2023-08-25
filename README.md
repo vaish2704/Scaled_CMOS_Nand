@@ -9,18 +9,18 @@ Nowadays, we observe that a complementary-metaloxide-semiconductor (CMOS) is wid
 
 # Contents
 
-* [Introduction](#Introduction)
-* [Conventional NAND Gate](#Conventional-NAND-Gate)
-* [Scaled NAND Gate](#Scaled-Nand-Gate)
-* [Tools Used](#Tools-Used)
-* [Circuit Design](#Circuit-Design)
-* [Simulation](#Simulation)
-* [SPICE Netlist](#SPICE-Netlist)
-* [Delay Comparison](#Delay-Comparison)
-* [Conclusion](#Conclusion)
-* [Author](#Author)
-* [Acknowledgements](#Acknowledgements)
-* [References](#References)
+* [Introduction](#introduction)
+* [Conventional NAND Gate](#conventional-nand-gate)
+* [Scaled NAND Gate](#scaled-nand-gate)
+* [Tools Used](#tools-used)
+* [Circuit Design](#circuit-design)
+* [Simulation](#simulation)
+* [SPICE Netlist](#spice-netlist)
+* [Delay Comparison](#delay-comparison)
+* [Conclusion](#conclusion)
+* [Author](#author)
+* [Acknowledgements](#acknowledgements)
+* [References](#references)
 
 # Introduction
 
